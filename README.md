@@ -59,37 +59,36 @@ This is an exploratory experiment. Proteins are not rigid; their function is oft
 
 ---
 
-4. Breast Cancer Classification using Logistic Regression
+### 4. Breast Cancer Classification using Logistic Regression
+**Dataset:** Wisconsin Diagnostic Breast Cancer (WDBC) — 569 samples, 32 features  
+**Tools:** Python, Pandas, Scikit-learn, Matplotlib, Seaborn
 
-Dataset: Wisconsin Diagnostic Breast Cancer (WDBC) — 569 samples, 32 features
-Tools: Python, Pandas, Scikit-learn, Matplotlib, Seaborn
-
-What I did:
+**What I did:**  
 Worked through a complete supervised classification pipeline on the WDBC dataset, where the goal was to classify tumours as malignant (1) or benign (0) based on cell nucleus measurements from fine needle aspirate images.
 
 Steps:
+- Loaded and inspected the dataset using `Data.head()`, `Data.tail()`, `Data.info()`, and `Data.describe()`
+- Identified and dropped a fully null column (`Unnamed: 32`) and the non-informative `id` column
+- Encoded the diagnosis column: Malignant → 1, Benign → 0
+- Visualised class distribution — 357 benign, 212 malignant
+- Standardised features using `StandardScaler` (important for logistic regression)
+- Split data 70/30 into train and test sets
+- Trained a `LogisticRegression` model using Scikit-learn
+- Evaluated using accuracy score and classification report
 
-Loaded and inspected the dataset using Data.head(), Data.tail(), Data.info(), and Data.describe()
-Identified and dropped a fully null column (Unnamed: 32) and the non-informative id column
-Encoded the diagnosis column: Malignant → 1, Benign → 0
-Visualised class distribution — 357 benign, 212 malignant
-Standardised features using StandardScaler (important for logistic regression)
-Split data 70/30 into train and test sets
-Trained a LogisticRegression model using Scikit-learn
-Evaluated using accuracy score and classification report
+**Results:**
+- **Accuracy: 98%**
+- Precision and recall above 97% for both classes
 
-Results:
-
-Accuracy: 98%
-Precision and recall above 97% for both classes
+```
               precision    recall  f1-score   support
            0       0.99      0.98      0.99       108
            1       0.97      0.98      0.98        63
     accuracy                           0.98       171
+```
 
-What I learned:
+**What I learned:**  
 The end-to-end workflow for a binary classification problem — from raw data inspection to model evaluation. Also got comfortable with StandardScaler, train-test splitting, and interpreting precision/recall beyond just accuracy.
-
 ## Why This Repository Exists
 
 Most of my formal coursework covers the biological and statistical foundations of bioinformatics. What is less covered is how to actually work with modern AI tools — PyTorch, foundation models, generative models for proteins — in a biological context.

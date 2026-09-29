@@ -55,7 +55,7 @@ Uploaded and experimented with BioEMU, a generative model from Microsoft Researc
 
 This is an exploratory experiment. Proteins are not rigid; their function is often tied to conformational dynamics. Tools like BioEMU represent a new frontier in structure-based biology, and this is my attempt to understand what they do and where they might be useful.
 
-**Status:** Ongoing experimentation.
+
 
 ---
 
